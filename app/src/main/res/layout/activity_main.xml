@@ -5,7 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f1eeee"
-    tools:context="com.lwl.neteasenews.MainActivity">
+    tools:context="com.lwl.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="#ea413d"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/line"
+        android:layout_below="@id/toolbar" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/rg"
+        android:background="#aad1cfcf" />
 
     <RadioGroup
         android:id="@+id/rg"
@@ -67,10 +86,5 @@
             android:textSize="10sp" />
     </RadioGroup>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@id/rg"
-        android:background="#aad1cfcf" />
 
 </RelativeLayout>
