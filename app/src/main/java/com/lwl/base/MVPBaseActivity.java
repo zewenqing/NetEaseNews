@@ -2,6 +2,9 @@ package com.lwl.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
@@ -14,6 +17,8 @@ import butterknife.ButterKnife;
 public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends AppCompatActivity {
 
     protected T mBasePresenter;
+    private Fragment showFragment;
+    private FragmentManager mFragmentManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,7 +30,7 @@ public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends App
         }
         setContentView(getLayoutId());
         ButterKnife.bind(this);
-
+        mFragmentManager = getSupportFragmentManager();
         initView();
         initData();
         initListener();
@@ -53,5 +58,27 @@ public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends App
         if (mBasePresenter != null) {
             mBasePresenter.detachView();
         }
+    }
+
+    public void showFragment(int frameId, Fragment fragment)
+    {
+        //开启一个事务
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        //当前有fragment显示，先隐藏掉
+        if (showFragment != null) {
+            transaction.hide(showFragment);
+        }
+        //在管理器中查找需要显示的fragmnet
+        Fragment fragmentByTag = mFragmentManager.findFragmentByTag(fragment.getClass().getName());
+        if (fragmentByTag != null) {
+            //显示
+            transaction.show(fragmentByTag);
+        }else{
+            //新建
+            transaction.add(frameId, fragment, fragment.getClass().getName());
+            transaction.show(fragment);
+        }
+        transaction.commit();
+        showFragment = fragmentByTag;
     }
 }
