@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+
+    <VideoView
+        android:id="@+id/item_lv_vv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/item_lv_iv1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#f00" />
+
+
+    <TextView
+        android:id="@+id/item_lv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_lv_iv1"
+        android:layout_margin="6dp"
+        android:lines="2"
+        android:text="我是真挚的"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/item_lv_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/item_lv_title"
+        android:layout_marginLeft="6dp" />
+
+    <TextView
+        android:id="@+id/item_lv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_lv_title"
+        android:layout_marginLeft="6dp"
+        android:layout_toRightOf="@+id/item_lv_icon"
+        android:text="liangyu"
+        android:textColor="#fff"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/item_lv_title"
+        android:layout_marginRight="10dp"
+        android:background="#242424"
+        android:drawableLeft="@android:drawable/ic_input_add"
+        android:text="订阅"
+        android:textColor="#fff" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/btn"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#fff" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableLeft="@android:drawable/ic_menu_add"
+            android:paddingLeft="15dp"
+            android:text="写弹幕"
+            android:textColor="#fff" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableLeft="@android:drawable/ic_menu_add"
+            android:paddingLeft="15dp"
+            android:text="看视频"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btn_shoucan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableLeft="@android:drawable/ic_menu_add"
+            android:paddingLeft="15dp"
+            android:text="收藏"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btn_shared"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableLeft="@android:drawable/ic_menu_add"
+            android:paddingLeft="15dp"
+            android:text="分享"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+</RelativeLayout>

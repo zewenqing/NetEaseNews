@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/video_toobar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="video"/>
-</LinearLayout>
+        android:background="#f00"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="视频" />
+
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:id="@+id/video_tab"
+        app:tabMode="scrollable"
+        app:tabTextColor="#000"
+        app:tabGravity="center"
+        android:layout_below="@+id/video_toobar"
+        android:layout_height="wrap_content"/>
+
+    <android.support.v4.view.ViewPager
+        android:layout_below="@+id/video_tab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/video_vp"/>
+
+</RelativeLayout>
