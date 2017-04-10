@@ -19,7 +19,7 @@ public abstract class MVPBaseFragment<V, T extends BasePresenter<V>> extends Fra
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //
+
         mPresenter = getPresenter();
         mPresenter.attachView((V) this);
     }

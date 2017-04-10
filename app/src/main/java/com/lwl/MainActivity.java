@@ -4,11 +4,12 @@ import android.widget.RadioGroup;
 
 import com.lwl.base.BasePresenter;
 import com.lwl.base.MVPBaseActivity;
-import com.lwl.home.HomeFragment;
-import com.lwl.live.LiveFragment;
-import com.lwl.mine.MineFragment;
+//import com.lwl.home.HomeFragment;
+//import com.lwl.live.LiveFragment;
+//import com.lwl.mine.MineFragment;
+import com.lwl.video.view.VideoFragment;
 import com.lwl.neteasenews.R;
-import com.lwl.video.VideoFragment;
+
 
 import butterknife.Bind;
 
@@ -34,17 +35,17 @@ public class MainActivity extends MVPBaseActivity {
                 switch (checkedId){
                     case R.id.rb1:
 
-                        showFragment(R.id.main_frame, new HomeFragment());
+//                        showFragment(R.id.main_frame, new HomeFragment());
                         break;
                     case R.id.rb2:
 
-                        showFragment(R.id.main_frame, new LiveFragment());
+//                        showFragment(R.id.main_frame, new LiveFragment());
                         break;
                     case R.id.rb3:
                         showFragment(R.id.main_frame, new VideoFragment());
                         break;
                     case R.id.rb4:
-                        showFragment(R.id.main_frame, new MineFragment());
+//                        showFragment(R.id.main_frame, new MineFragment());
                         break;
                 }
             }
